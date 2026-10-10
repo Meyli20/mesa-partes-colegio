@@ -3,7 +3,7 @@ from .area import Area
 
 
 class Tramite:
-    ESTADOS_VALIDOS = ["Pendiente", "En revisión", "Aprobado", "Rechazado"]
+    ESTADOS_VALIDOS = ["Pendiente", "En revision", "Aprobado", "Rechazado"]
 
     def __init__(
         self,
@@ -48,19 +48,19 @@ class Tramite:
         return self._estado
 
     def esta_en_curso(self) -> bool:
-        return self._estado == "Pendiente" or self._estado == "En revisión"
+        return self._estado == "Pendiente" or self._estado == "En revision"
 
     def cambiar_estado(self, nuevo_estado: str, respuesta: str = ""):
         if nuevo_estado not in self.ESTADOS_VALIDOS:
-            raise ValueError(f"'{nuevo_estado}' no es un estado válido.")
+            raise ValueError(f"'{nuevo_estado}' no es un estado valido.")
         self._estado = nuevo_estado
         self._respuesta = respuesta
 
     def resumen(self) -> str:
         info = (
-            f"Trámite [{self._codigo}] - {self._tipo} | Estado: {self._estado}\n"
+            f"Tramite [{self._codigo}] - {self._tipo} | Estado: {self._estado}\n"
             f"  Estudiante: {self._estudiante.nombre} (DNI: {self._estudiante.dni})\n"
-            f"  Área      : {self._area.nombre}\n"
+            f"  Area      : {self._area.nombre}\n"
             f"  Fecha     : {self._fecha}"
         )
         if self._motivo:

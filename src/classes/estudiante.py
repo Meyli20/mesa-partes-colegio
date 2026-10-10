@@ -2,9 +2,9 @@ class Estudiante:
     def __init__(self, dni: str, nombre: str, grado: str):
         dni = str(dni).strip()
         if not (dni.isdigit() and len(dni) == 8):
-            raise ValueError("El DNI debe tener exactamente 8 dígitos.")
+            raise ValueError("El DNI debe tener exactamente 8 digitos.")
         if not str(nombre).strip():
-            raise ValueError("El nombre no puede estar vacío.")
+            raise ValueError("El nombre no puede estar vacio.")
         self._dni = dni
         self._nombre = str(nombre).strip()
         self._grado = str(grado).strip()
