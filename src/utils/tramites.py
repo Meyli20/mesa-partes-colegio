@@ -89,7 +89,7 @@ def registrar_estudiante_menu():
 
         nuevo = Estudiante(dni, nombre, grado)
         estudiantes.append(nuevo)
-        print(f"[OK] {nuevo.resumen()} registrado correctamente.")
+        print(f"[OK]  {nuevo.resumen()}  registrado correctamente.")
 
     except ValueError as err:
         print(f"[ERROR] {err}")
